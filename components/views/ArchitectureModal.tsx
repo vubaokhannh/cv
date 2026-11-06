@@ -71,7 +71,7 @@ export default function ArchitectureModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="arch-modal-title"
-        className="bg-white border border-blueprint-200 rounded-xl shadow-2xl w-full max-w-5xl max-h-[92vh] flex flex-col overflow-hidden my-auto focus:outline-none"
+        className="bg-white border border-blueprint-200 rounded-xl shadow-2xl w-full max-w-7xl max-h-[92vh] flex flex-col overflow-hidden my-auto focus:outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}

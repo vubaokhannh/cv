@@ -47,6 +47,13 @@ export interface ArchTier {
   nodes: ArchNode[];
 }
 
+/** A data-flow connection between two diagram nodes (from → to). */
+export interface ArchEdge {
+  from: NodeKey;
+  to: NodeKey;
+  label: string;
+}
+
 export interface ProjectArchData {
   kicker: string;
   title: string;
@@ -54,6 +61,8 @@ export interface ProjectArchData {
   diagram: string;
   diagramRight: string;
   tiers: ArchTier[];
+  /** Connections drawn between nodes; omit for a plain tiered layout. */
+  edges?: ArchEdge[];
   nodeDetails: Record<string, NodeDetail>;
   defaultNodeKey: string;
 }
@@ -137,6 +146,7 @@ export interface Content {
       decision: string;
       stack: string;
       core: string;
+      connections: string;
       show: string;
       hide: string;
       inspecting: string; // contains {tag}

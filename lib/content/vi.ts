@@ -1,4 +1,5 @@
 import { TECH_KRELLO, TECH_STREAMHUB } from "../constants";
+import { KRELLO_EDGES, STREAMHUB_EDGES } from "./architecture-edges";
 import type { Content, ArchTier, NodeDetail } from "./types";
 
 const streamhubArchTiers: ArchTier[] = [
@@ -366,6 +367,7 @@ export const vi: Content = {
       decision: "QUYẾT ĐỊNH THIẾT KẾ",
       stack: "CÔNG NGHỆ",
       core: "DỊCH VỤ LÕI",
+      connections: "KẾT NỐI",
       show: "Xem kiến trúc",
       hide: "Ẩn kiến trúc",
       inspecting: "Đang xem {tag}",
@@ -493,6 +495,7 @@ export const vi: Content = {
         diagramRight: "API ⟷ QUEUE ⟷ WORKER",
         defaultNodeKey: "api",
         tiers: streamhubArchTiers,
+        edges: STREAMHUB_EDGES,
         nodeDetails: streamhubNodeDetails,
       },
     },
@@ -529,6 +532,7 @@ export const vi: Content = {
         diagramRight: "REST API ⟷ SOCKET.IO ⟷ REDIS",
         defaultNodeKey: "krello_api",
         tiers: krelloArchTiers,
+        edges: KRELLO_EDGES,
         nodeDetails: krelloNodeDetails,
       },
     },
