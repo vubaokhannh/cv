@@ -193,7 +193,7 @@ export default async function Image({
         <div style={{ display: "flex", gap: "24px" }}>
           <span>Email: {CONTACT.email}</span>
         </div>
-        <span style={{ color: "#38bdf8" }}>github.com/vubaokhanh2311</span>
+        <span style={{ color: "#38bdf8" }}>github.com/vubaokhannh</span>
       </div>
     </div>,
     {

@@ -330,6 +330,11 @@ export const vi: Content = {
       minRead: "{n} phút đọc",
       empty: "Chưa có bài viết.",
       toc: "Mục lục nội dung",
+      author: {
+        heading: "Về tác giả",
+        bio: "Fullstack Developer tại TP. Hồ Chí Minh. Tôi xây dựng ứng dụng web với React, TypeScript, NestJS và PostgreSQL, tập trung vào hệ thống thời gian thực, xử lý bất đồng bộ, xác thực và thanh toán.",
+        contact: "Liên hệ",
+      },
     },
     sidebar: {
       github: "GitHub",
@@ -506,7 +511,7 @@ export const vi: Content = {
       period: "09/2025 - 12/2025",
       links: [
         { label: "Xem demo", href: "https://krello.click/", primary: true },
-        { label: "GitHub ↗", href: "https://github.com/vubaokhanh2311" },
+        { label: "GitHub ↗", href: "https://github.com/vubaokhannh" },
       ],
       highlights: [
         "Phát triển nền tảng quản lý công việc fullstack lấy cảm hứng từ Trello, xây RESTful API với NestJS/Prisma và giao diện Kanban tương tác với React và @dnd-kit.",

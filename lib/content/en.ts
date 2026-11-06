@@ -330,6 +330,11 @@ export const en: Content = {
       minRead: "{n} min read",
       empty: "No posts yet.",
       toc: "Table of Contents",
+      author: {
+        heading: "About the author",
+        bio: "Fullstack Developer in Ho Chi Minh City. I build web applications with React, TypeScript, NestJS and PostgreSQL, with a focus on real-time systems, asynchronous processing, authentication and payments.",
+        contact: "Get in touch",
+      },
     },
     sidebar: {
       github: "GitHub",
@@ -503,7 +508,7 @@ export const en: Content = {
       period: "Sep 2025 - Dec 2025",
       links: [
         { label: "Live Demo", href: "https://krello.click/", primary: true },
-        { label: "GitHub ↗", href: "https://github.com/vubaokhanh2311" },
+        { label: "GitHub ↗", href: "https://github.com/vubaokhannh" },
       ],
       highlights: [
         "Developed a Trello-inspired fullstack task management platform, building RESTful APIs with NestJS/Prisma and interactive Kanban interfaces with React and @dnd-kit.",

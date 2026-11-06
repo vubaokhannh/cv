@@ -7,7 +7,7 @@ export const CONTACT = {
   name: "Vũ Bảo Khanh",
   email: "vubaokhanh2311@gmail.com",
   phone: "+84949542325",
-  github: "https://github.com/vubaokhanh2311",
+  github: "https://github.com/vubaokhannh",
   cvHref: "/Vu-Bao-Khanh-CV.pdf",
 } as const;
 

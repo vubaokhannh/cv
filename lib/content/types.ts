@@ -113,6 +113,7 @@ export interface Content {
       minRead: string; // contains {n}
       empty: string;
       toc: string;
+      author: { heading: string; bio: string; contact: string };
     };
     sidebar: {
       github: string;

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AuthorCard from "@/components/blog/AuthorCard";
 import BlogShell from "@/components/blog/BlogShell";
 import Markdown from "@/components/blog/Markdown";
 import TableOfContents from "@/components/blog/TableOfContents";
@@ -199,6 +200,8 @@ async function BlogPost({
           <div className="text-sm text-blueprint-700 leading-relaxed">
             <Markdown>{post.body}</Markdown>
           </div>
+
+          <AuthorCard lang={lang} />
         </article>
 
         {/* Sticky TOC alongside the article on desktop */}
