@@ -7,6 +7,9 @@ const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 /**
+ * Sync fs is acceptable here: it is one `stat` per blog-post request and only
+ * exists to turn unknown slugs into a real HTTP 404 (see rewrite below).
+ *
  * Whether a blog post is known to be missing. Fails open: if the content
  * folder can't be read at runtime (e.g. a host that doesn't bundle it), the
  * page itself decides and calls notFound().

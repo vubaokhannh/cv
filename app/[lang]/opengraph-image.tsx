@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { notFound } from "next/navigation";
 import { CONTACT } from "@/lib/constants";
 import { getContent } from "@/lib/content";
-import { hasLocale } from "@/lib/i18n";
+import { hasLocale, locales } from "@/lib/i18n";
 
 export const size = {
   width: 1200,
@@ -12,6 +12,10 @@ export const size = {
 export const contentType = "image/png";
 
 export const alt = "Vũ Bảo Khanh - Fullstack Developer";
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
 export default async function Image({
   params,

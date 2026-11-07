@@ -104,7 +104,7 @@ export default function ContactView() {
                 <Icon />
               </span>
               <div className="min-w-0">
-                <div className="text-[10px] font-mono uppercase text-blueprint-400">
+                <div className="text-xs font-mono uppercase text-blueprint-400">
                   {label}
                 </div>
                 <div className="text-sm font-mono text-blueprint-900 truncate">

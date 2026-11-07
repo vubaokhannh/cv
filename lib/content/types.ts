@@ -113,6 +113,7 @@ export interface Content {
       minRead: string; // contains {n}
       empty: string;
       toc: string;
+      sectionLink: string; // aria-label of the heading anchor
       author: { heading: string; bio: string; contact: string };
     };
     sidebar: {
@@ -150,6 +151,7 @@ export interface Content {
       connections: string;
       show: string;
       hide: string;
+      close: string;
       inspecting: string; // contains {tag}
     };
     tabs: { label: string; hint: string };

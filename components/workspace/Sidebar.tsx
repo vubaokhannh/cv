@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Copy,
   EnvelopeSimple,
@@ -24,7 +26,7 @@ export default function Sidebar() {
       {/* Identity block */}
       <div className="p-5 border-b border-blueprint-200 bg-gradient-to-b from-white to-blueprint-50/50">
         <div className="flex justify-between items-start mb-3">
-          <span className="px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider bg-blueprint-100 text-blueprint-700 rounded border border-blueprint-200">
+          <span className="px-2 py-0.5 text-xs font-mono uppercase tracking-wider bg-blueprint-100 text-blueprint-700 rounded border border-blueprint-200">
             {c.profile.role}
           </span>
         </div>
@@ -41,7 +43,7 @@ export default function Sidebar() {
           {c.profile.summary}
         </p>
 
-        <div className="mt-3 space-y-1 text-[11px] font-mono text-blueprint-500">
+        <div className="mt-3 space-y-1 text-xs font-mono text-blueprint-500">
           <div className="flex items-center gap-1.5">
             <MapPin /> {c.profile.location}
           </div>
@@ -62,7 +64,7 @@ export default function Sidebar() {
           <EnvelopeSimple className="text-sm" /> {c.ui.sidebar.contact}
         </Link>
 
-        <div className="grid grid-cols-3 gap-2 mt-2 text-[11px] font-mono">
+        <div className="grid grid-cols-3 gap-2 mt-2 text-xs font-mono">
           <a
             href={CONTACT.github}
             target="_blank"

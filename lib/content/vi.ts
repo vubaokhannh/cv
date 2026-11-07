@@ -330,6 +330,7 @@ export const vi: Content = {
       minRead: "{n} phút đọc",
       empty: "Chưa có bài viết.",
       toc: "Mục lục nội dung",
+      sectionLink: "Liên kết tới mục này",
       author: {
         heading: "Về tác giả",
         bio: "Fullstack Developer tại TP. Hồ Chí Minh. Tôi xây dựng ứng dụng web với React, TypeScript, NestJS và PostgreSQL, tập trung vào hệ thống thời gian thực, xử lý bất đồng bộ, xác thực và thanh toán.",
@@ -375,6 +376,7 @@ export const vi: Content = {
       connections: "KẾT NỐI",
       show: "Xem kiến trúc",
       hide: "Ẩn kiến trúc",
+      close: "Đóng",
       inspecting: "Đang xem {tag}",
     },
     tabs: { label: "Mục", hint: "Bấm 1–4 để chuyển" },

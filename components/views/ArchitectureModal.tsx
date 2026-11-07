@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { TreeStructure, X } from "@phosphor-icons/react";
 import type { Project, ProjectArchData } from "@/lib/content/types";
 import { useLocale } from "@/components/shared/LocaleContext";
+import { useFocusTrap } from "@/components/shared/useFocusTrap";
 import ArchitectureDiagram from "./ArchitectureDiagram";
 
 interface ArchitectureModalProps {
@@ -19,8 +20,10 @@ export default function ArchitectureModal({
   onClose,
   onToast,
 }: ArchitectureModalProps) {
-  const { c, lang } = useLocale();
+  const { c } = useLocale();
   const modalRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(modalRef, isOpen);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -58,8 +61,6 @@ export default function ArchitectureModal({
     defaultNodeKey: "api",
   };
 
-  const closeLabel = lang === "vi" ? "Đóng" : "Close";
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs overflow-y-auto"
@@ -81,7 +82,7 @@ export default function ArchitectureModal({
               <TreeStructure className="text-base" />
             </span>
             <div className="min-w-0">
-              <div className="text-[10px] font-mono text-blueprint-500 uppercase tracking-wider flex items-center gap-2 truncate">
+              <div className="text-xs font-mono text-blueprint-500 uppercase tracking-wider flex items-center gap-2 truncate">
                 <span>{project.spec}</span>
                 <span>·</span>
                 <span>{archData.kicker.replace("// ", "")}</span>
@@ -100,9 +101,9 @@ export default function ArchitectureModal({
               type="button"
               onClick={onClose}
               className="px-2.5 py-1 text-xs font-mono border border-blueprint-200 rounded hover:bg-blueprint-50 text-blueprint-600 hover:text-blueprint-950 transition-colors flex items-center gap-1.5 cursor-pointer"
-              aria-label={closeLabel}
+              aria-label={c.ui.arch.close}
             >
-              <span className="hidden sm:inline text-[10px] text-blueprint-400 bg-blueprint-100 px-1 py-0.5 rounded font-mono">
+              <span className="hidden sm:inline text-xs text-blueprint-400 bg-blueprint-100 px-1 py-0.5 rounded font-mono">
                 {c.ui.palette.esc}
               </span>
               <X className="text-sm" />
@@ -120,7 +121,7 @@ export default function ArchitectureModal({
         </div>
 
         {/* Modal Footer */}
-        <div className="px-4 sm:px-6 py-2.5 border-t border-blueprint-100 bg-blueprint-50/60 flex flex-wrap items-center justify-between text-[11px] font-mono text-blueprint-500 shrink-0 gap-2">
+        <div className="px-4 sm:px-6 py-2.5 border-t border-blueprint-100 bg-blueprint-50/60 flex flex-wrap items-center justify-between text-xs font-mono text-blueprint-500 shrink-0 gap-2">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>{archData.diagramRight}</span>
@@ -130,7 +131,7 @@ export default function ArchitectureModal({
             onClick={onClose}
             className="px-2.5 py-1 text-xs font-mono bg-blueprint-900 text-white rounded hover:bg-blueprint-950 transition-colors cursor-pointer"
           >
-            {closeLabel} ({c.ui.palette.esc})
+            {c.ui.arch.close} ({c.ui.palette.esc})
           </button>
         </div>
       </div>

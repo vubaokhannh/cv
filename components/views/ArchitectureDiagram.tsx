@@ -282,7 +282,7 @@ export default function ArchitectureDiagram({
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_340px] items-start">
         {/* Blueprint diagram */}
         <div className="bg-white border border-blueprint-200 rounded-lg p-4 sm:p-6 shadow-2xs relative bg-blueprint-grid">
-          <div className="text-[10px] font-mono text-blueprint-400 uppercase tracking-wider mb-6 flex flex-wrap justify-between gap-x-4">
+          <div className="text-xs font-mono text-blueprint-400 uppercase tracking-wider mb-6 flex flex-wrap justify-between gap-x-4">
             <span>{archData.diagram}</span>
             <span>{archData.diagramRight}</span>
           </div>
@@ -382,7 +382,7 @@ export default function ArchitectureDiagram({
                         x={r.lx}
                         y={r.ly + 3}
                         textAnchor="middle"
-                        className="fill-blueprint-700 font-mono text-[9px]"
+                        className="fill-blueprint-700 font-mono text-xs"
                       >
                         {r.edge.label}
                       </text>
@@ -429,7 +429,7 @@ export default function ArchitectureDiagram({
                             }`}
                           >
                             {node.primary && (
-                              <span className="absolute -top-2 right-2 text-[9px] font-mono bg-blueprint-900 text-white px-1.5 rounded">
+                              <span className="absolute -top-2 right-2 text-xs font-mono bg-blueprint-900 text-white px-1.5 rounded">
                                 {c.ui.arch.core}
                               </span>
                             )}
@@ -439,11 +439,11 @@ export default function ArchitectureDiagram({
                               >
                                 {node.name}
                               </span>
-                              <span className="text-[10px] font-mono px-1.5 py-0.5 bg-blueprint-100 rounded text-blueprint-600 shrink-0">
+                              <span className="text-xs font-mono px-1.5 py-0.5 bg-blueprint-100 rounded text-blueprint-600 shrink-0">
                                 {node.badge}
                               </span>
                             </div>
-                            <p className="text-[11px] text-blueprint-600 mt-1">
+                            <p className="text-xs text-blueprint-600 mt-1">
                               {node.desc}
                             </p>
                           </div>
@@ -472,14 +472,14 @@ export default function ArchitectureDiagram({
                   {inspected.title}
                 </span>
               </div>
-              <span className="text-[10px] font-mono uppercase bg-blueprint-100 px-2 py-0.5 rounded text-blueprint-700">
+              <span className="text-xs font-mono uppercase bg-blueprint-100 px-2 py-0.5 rounded text-blueprint-700">
                 {inspected.tag}
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4 mt-4 text-xs font-mono">
               <div>
-                <span className="text-blueprint-400 block text-[10px]">
+                <span className="text-blueprint-400 block text-xs">
                   {c.ui.arch.responsibility}
                 </span>
                 <p className="text-blueprint-800 mt-1 text-justify hyphens-auto">
@@ -487,7 +487,7 @@ export default function ArchitectureDiagram({
                 </p>
               </div>
               <div>
-                <span className="text-blueprint-400 block text-[10px]">
+                <span className="text-blueprint-400 block text-xs">
                   {c.ui.arch.decision}
                 </span>
                 <p className="text-blueprint-800 mt-1 text-justify hyphens-auto">
@@ -495,7 +495,7 @@ export default function ArchitectureDiagram({
                 </p>
               </div>
               <div>
-                <span className="text-blueprint-400 block text-[10px]">
+                <span className="text-blueprint-400 block text-xs">
                   {c.ui.arch.stack}
                 </span>
                 <p className="text-emerald-700 dark:text-emerald-400 font-semibold mt-1">
@@ -506,10 +506,10 @@ export default function ArchitectureDiagram({
 
             {connections.length > 0 && (
               <div className="mt-4 pt-3 border-t border-blueprint-100">
-                <span className="text-blueprint-400 block text-[10px] font-mono">
+                <span className="text-blueprint-400 block text-xs font-mono">
                   {c.ui.arch.connections}
                 </span>
-                <ul className="mt-2 flex flex-wrap gap-2 text-[11px] font-mono">
+                <ul className="mt-2 flex flex-wrap gap-2 text-xs font-mono">
                   {connections.map((e) => {
                     const outgoing = e.from === inspectedKey;
                     const other = outgoing ? e.to : e.from;

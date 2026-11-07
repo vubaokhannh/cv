@@ -4,6 +4,10 @@ node_modules
 .next
 .git
 .gitignore
-.env*.local
+.env*
+!.env.example
+.github
+coverage
+**/*.test.ts
 README.md
 

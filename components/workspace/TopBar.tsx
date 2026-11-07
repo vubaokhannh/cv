@@ -47,7 +47,7 @@ export default function TopBar({ onOpenPalette }: TopBarProps) {
 
         <Link
           href={`/${lang}/blog`}
-          className="flex items-center space-x-1.5 px-2.5 py-1 rounded border border-blueprint-200 bg-white hover:bg-blueprint-50 text-blueprint-800 transition-colors text-[11px]"
+          className="flex items-center space-x-1.5 px-2.5 py-1 rounded border border-blueprint-200 bg-white hover:bg-blueprint-50 text-blueprint-800 transition-colors text-xs"
         >
           <Article />
           <span className="hidden sm:inline">{c.ui.topbar.blog}</span>
@@ -55,11 +55,11 @@ export default function TopBar({ onOpenPalette }: TopBarProps) {
 
         <button
           onClick={onOpenPalette}
-          className="flex items-center space-x-2 px-2.5 py-1 rounded border border-blueprint-200 bg-blueprint-50 hover:bg-blueprint-100 text-blueprint-600 transition-colors text-[11px]"
+          className="flex items-center space-x-2 px-2.5 py-1 rounded border border-blueprint-200 bg-blueprint-50 hover:bg-blueprint-100 text-blueprint-600 transition-colors text-xs"
         >
           <MagnifyingGlass />
           <span className="hidden sm:inline">{c.ui.topbar.quickJump}</span>
-          <kbd className="hidden sm:inline px-1 py-0.5 bg-white border border-blueprint-200 rounded text-[9px] font-mono text-blueprint-500 shadow-2xs">
+          <kbd className="hidden sm:inline px-1 py-0.5 bg-white border border-blueprint-200 rounded text-xs font-mono text-blueprint-500 shadow-2xs">
             ⌘K
           </kbd>
         </button>
@@ -67,7 +67,7 @@ export default function TopBar({ onOpenPalette }: TopBarProps) {
         <button
           onClick={copyEmail}
           aria-label={EMAIL}
-          className="flex items-center space-x-1.5 px-2.5 py-1 rounded border border-blueprint-200 bg-white hover:bg-blueprint-50 text-blueprint-800 transition-colors text-[11px] font-mono font-medium"
+          className="flex items-center space-x-1.5 px-2.5 py-1 rounded border border-blueprint-200 bg-white hover:bg-blueprint-50 text-blueprint-800 transition-colors text-xs font-mono font-medium"
         >
           <Copy />
           <span className="hidden xl:inline">{EMAIL}</span>

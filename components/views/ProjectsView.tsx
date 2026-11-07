@@ -69,7 +69,7 @@ function ProjectCard({
     <article className="bg-white border border-blueprint-200 rounded-lg p-4 sm:p-5 shadow-2xs space-y-4">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-blueprint-100 pb-3 gap-2">
         <div>
-          <span className="text-[10px] font-mono text-blueprint-400 uppercase">
+          <span className="text-xs font-mono text-blueprint-400 uppercase">
             {p.spec} · {p.period}
           </span>
           <h3 className="text-base font-bold text-blueprint-950">{p.title}</h3>
@@ -112,7 +112,7 @@ function ProjectCard({
         ))}
       </ul>
 
-      <div className="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono">
+      <div className="flex flex-wrap gap-1.5 pt-1 text-xs font-mono">
         {p.tech.map((t) => (
           <span
             key={t}
@@ -132,11 +132,11 @@ function ProjectCard({
           >
             <TreeStructure className="text-sm text-blueprint-500 group-hover:text-blueprint-900 transition-colors" />
             <span className="font-semibold">{c.ui.arch.show}</span>
-            <span className="text-[10px] text-blueprint-400 font-mono px-1 py-0.5 bg-blueprint-100 rounded ml-1">
+            <span className="text-xs text-blueprint-400 font-mono px-1 py-0.5 bg-blueprint-100 rounded ml-1">
               MODAL
             </span>
           </button>
-          <span className="text-[10px] font-mono text-blueprint-400 hidden sm:inline">
+          <span className="text-xs font-mono text-blueprint-400 hidden sm:inline">
             {p.archData?.diagramRight ?? c.ui.arch.diagramRight}
           </span>
         </div>

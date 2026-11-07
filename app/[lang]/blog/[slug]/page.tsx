@@ -6,6 +6,7 @@ import AuthorCard from "@/components/blog/AuthorCard";
 import BlogShell from "@/components/blog/BlogShell";
 import Markdown from "@/components/blog/Markdown";
 import TableOfContents from "@/components/blog/TableOfContents";
+import { jsonLd } from "@/lib/jsonld";
 import { extractToc, formatDate, getPost, getPosts } from "@/lib/blog";
 import { CONTACT, SITE_URL } from "@/lib/constants";
 import { getContent } from "@/lib/content";
@@ -62,6 +63,7 @@ export async function generateMetadata({
       title,
       description,
       publishedTime: post.date,
+      modifiedTime: post.updated,
       authors: [CONTACT.name],
       tags: post.tags,
       locale: OG_LOCALE[lang],
@@ -113,7 +115,7 @@ async function BlogPost({
         headline: post.title,
         description: post.summary,
         datePublished: post.date,
-        dateModified: post.date,
+        dateModified: post.updated,
         inLanguage: lang,
         author: {
           "@type": "Person",
@@ -156,7 +158,7 @@ async function BlogPost({
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(postJsonLd) }}
       />
       <Link
         href={`/${lang}/blog`}
@@ -168,14 +170,14 @@ async function BlogPost({
       <div className="flex flex-col lg:flex-row items-start gap-6 xl:gap-8">
         <article className="min-w-0 flex-1 w-full bg-white border border-blueprint-200 rounded-lg p-5 sm:p-8 shadow-2xs">
           <header className="border-b border-blueprint-100 pb-4 mb-4">
-            <div className="text-[10px] font-mono text-blueprint-400 uppercase">
+            <div className="text-xs font-mono text-blueprint-400 uppercase">
               {formatDate(post.date, lang)} ·{" "}
               {blog.minRead.replace("{n}", String(post.minutes))}
             </div>
             <h1 className="text-xl font-bold tracking-tight text-blueprint-950 mt-1">
               {post.title}
             </h1>
-            <div className="flex flex-wrap gap-1.5 mt-3 text-[11px] font-mono">
+            <div className="flex flex-wrap gap-1.5 mt-3 text-xs font-mono">
               {post.tags.map((t) => (
                 <span
                   key={t}
@@ -198,7 +200,7 @@ async function BlogPost({
           </div>
 
           <div className="text-sm text-blueprint-700 leading-relaxed">
-            <Markdown>{post.body}</Markdown>
+            <Markdown sectionLabel={blog.sectionLink}>{post.body}</Markdown>
           </div>
 
           <AuthorCard lang={lang} />

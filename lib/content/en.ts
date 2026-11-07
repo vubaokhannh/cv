@@ -330,6 +330,7 @@ export const en: Content = {
       minRead: "{n} min read",
       empty: "No posts yet.",
       toc: "Table of Contents",
+      sectionLink: "Link to section",
       author: {
         heading: "About the author",
         bio: "Fullstack Developer in Ho Chi Minh City. I build web applications with React, TypeScript, NestJS and PostgreSQL, with a focus on real-time systems, asynchronous processing, authentication and payments.",
@@ -372,6 +373,7 @@ export const en: Content = {
       connections: "CONNECTIONS",
       show: "View architecture",
       hide: "Hide architecture",
+      close: "Close",
       inspecting: "Inspecting {tag}",
     },
     tabs: { label: "Sections", hint: "Press 1–4 to switch" },

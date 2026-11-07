@@ -10,8 +10,8 @@
   --color-blueprint-100: #f1f5f9;
   --color-blueprint-200: #e2e8f0;
   --color-blueprint-300: #cbd5e1;
-  --color-blueprint-400: #94a3b8;
-  --color-blueprint-500: #64748b;
+  --color-blueprint-400: #6b7a90;
+  --color-blueprint-500: #526072;
   --color-blueprint-600: #475569;
   --color-blueprint-700: #334155;
   --color-blueprint-800: #1e293b;
@@ -28,8 +28,8 @@
   --color-blueprint-100: #111a2e;
   --color-blueprint-200: #1e293b;
   --color-blueprint-300: #334155;
-  --color-blueprint-400: #64748b;
-  --color-blueprint-500: #94a3b8;
+  --color-blueprint-400: #8190a6;
+  --color-blueprint-500: #9fb0c6;
   --color-blueprint-600: #a8b5c8;
   --color-blueprint-700: #cbd5e1;
   --color-blueprint-800: #e2e8f0;
@@ -92,4 +92,52 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* Syntax highlighting (rehype-highlight / highlight.js classes), themed with
+   the blueprint palette. Code blocks always sit on a dark surface. */
+pre code.hljs {
+  background: transparent;
+  color: inherit;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #7d8ca3;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag {
+  color: #c4a7ff;
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: #86efac;
+}
+.hljs-number,
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable {
+  color: #fdba74;
+}
+.hljs-title,
+.hljs-section,
+.hljs-function .hljs-title {
+  color: #7dd3fc;
+}
+.hljs-built_in,
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #fcd34d;
+}
+.hljs-meta,
+.hljs-symbol,
+.hljs-bullet {
+  color: #f9a8d4;
+}
+.hljs-deletion {
+  color: #fca5a5;
 }

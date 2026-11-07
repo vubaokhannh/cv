@@ -28,7 +28,7 @@ export default function NotFoundCard({ lang }: { lang?: Locale }) {
   return (
     <div className="flex-1 flex items-center justify-center p-6 bg-dot-grid min-h-screen">
       <div className="bg-white border border-blueprint-200 rounded-lg max-w-md w-full p-6 sm:p-8 shadow-2xs">
-        <div className="text-[11px] font-mono uppercase tracking-widest text-blueprint-400 mb-2">
+        <div className="text-xs font-mono uppercase tracking-widest text-blueprint-400 mb-2">
           {"// HTTP 404 · NOT FOUND"}
         </div>
 

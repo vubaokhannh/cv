@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
-import { getPost } from "@/lib/blog";
+import { getPost, getPosts } from "@/lib/blog";
 import { CONTACT } from "@/lib/constants";
-import { hasLocale } from "@/lib/i18n";
+import { hasLocale, locales } from "@/lib/i18n";
 
 export const size = {
   width: 1200,
@@ -9,6 +9,15 @@ export const size = {
 };
 
 export const contentType = "image/png";
+
+export async function generateStaticParams() {
+  const all = await Promise.all(
+    locales.map(async (lang) =>
+      (await getPosts(lang)).map((p) => ({ lang, slug: p.slug })),
+    ),
+  );
+  return all.flat();
+}
 
 export default async function Image({
   params,

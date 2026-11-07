@@ -1,7 +1,4 @@
-"use client";
-
-import type { Release } from "@/lib/content/types";
-import { useLocale } from "@/components/shared/LocaleContext";
+import type { Content, Release } from "@/lib/content/types";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const dotClass: Record<Release["tone"], string> = {
@@ -14,8 +11,8 @@ const badgeClass: Record<Release["tone"], string> = {
   mid: "bg-blueprint-200 text-blueprint-800",
 };
 
-export default function ExperienceView() {
-  const { c } = useLocale();
+/** Server component: static content only, no client JS. */
+export default function ExperienceView({ c }: { c: Content }) {
   return (
     <div className="p-4 sm:p-6 md:p-8 space-y-6 max-w-5xl mx-auto w-full">
       <SectionHeader
@@ -73,7 +70,7 @@ export default function ExperienceView() {
             key={e.school + e.period}
             className="bg-white border border-blueprint-200 rounded-lg p-4 sm:p-5 shadow-2xs"
           >
-            <div className="text-[10px] font-mono text-blueprint-400 uppercase">
+            <div className="text-xs font-mono text-blueprint-400 uppercase">
               {e.period}
             </div>
             <div className="text-sm font-bold text-blueprint-950 mt-1">

@@ -49,7 +49,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
                 href={`/${lang}/blog/${p.slug}`}
                 className="block bg-white border border-blueprint-200 rounded-lg p-5 shadow-2xs hover:border-blueprint-900 transition-colors"
               >
-                <div className="text-[10px] font-mono text-blueprint-400 uppercase">
+                <div className="text-xs font-mono text-blueprint-400 uppercase">
                   {formatDate(p.date, lang)} ·{" "}
                   {blog.minRead.replace("{n}", String(p.minutes))}
                 </div>
@@ -59,7 +59,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
                 <p className="text-xs text-blueprint-600 mt-2 leading-relaxed">
                   {p.summary}
                 </p>
-                <div className="flex flex-wrap gap-1.5 mt-3 text-[11px] font-mono">
+                <div className="flex flex-wrap gap-1.5 mt-3 text-xs font-mono">
                   {p.tags.map((t) => (
                     <span
                       key={t}

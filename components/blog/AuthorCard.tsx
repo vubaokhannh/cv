@@ -22,7 +22,7 @@ export default function AuthorCard({ lang }: { lang: Locale }) {
       aria-label={t.heading}
       className="mt-10 pt-6 border-t border-blueprint-200"
     >
-      <div className="text-[10px] font-mono uppercase tracking-widest text-blueprint-400 mb-3">
+      <div className="text-xs font-mono uppercase tracking-widest text-blueprint-400 mb-3">
         {t.heading}
       </div>
 
@@ -46,7 +46,7 @@ export default function AuthorCard({ lang }: { lang: Locale }) {
             {t.bio}
           </p>
 
-          <div className="flex flex-wrap gap-2 mt-4 text-[11px] font-mono">
+          <div className="flex flex-wrap gap-2 mt-4 text-xs font-mono">
             <a
               href={CONTACT.github}
               target="_blank"

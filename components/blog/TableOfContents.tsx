@@ -123,11 +123,11 @@ export default function TableOfContents({
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400" />
           <span>{label}</span>
-          <span className="text-[11px] font-normal text-blueprint-500">
+          <span className="text-xs font-normal text-blueprint-500">
             ({items.length})
           </span>
         </span>
-        <span className="flex items-center gap-1 text-[11px] font-mono text-blue-600 dark:text-blue-400 hover:underline">
+        <span className="flex items-center gap-1 text-xs font-mono text-blue-600 dark:text-blue-400 hover:underline">
           <span>
             {isOpen
               ? isEn

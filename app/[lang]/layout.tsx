@@ -5,6 +5,7 @@ import Script from "next/script";
 import { CONTACT, SITE_URL } from "@/lib/constants";
 import { getContent } from "@/lib/content";
 import { hasLocale, locales } from "@/lib/i18n";
+import { jsonLd } from "@/lib/jsonld";
 import { OG_LOCALE, pageAlternates } from "@/lib/seo";
 import "../globals.css";
 
@@ -72,7 +73,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       ...pageAlternates(lang, ""),
-      types: { "application/rss+xml": "/feed.xml" },
+      types: { "application/rss+xml": `/${lang}/feed.xml` },
     },
     openGraph: {
       type: "website",
@@ -145,14 +146,14 @@ export default async function RootLayout({
     >
       <body
         suppressHydrationWarning
-        className="bg-blueprint-50 text-blueprint-900 font-sans antialiased min-h-screen md:h-screen flex flex-col md:overflow-hidden selection:bg-blueprint-900 selection:text-white"
+        className="bg-blueprint-50 text-blueprint-900 font-sans antialiased min-h-screen md:h-dvh flex flex-col md:overflow-hidden selection:bg-blueprint-900 selection:text-white"
       >
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT}
         </Script>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(personJsonLd) }}
         />
         {gaId && (
           <>

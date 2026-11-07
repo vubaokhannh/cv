@@ -19,7 +19,7 @@ export default function LanguageSwitcher({
     <div
       role="group"
       aria-label={label}
-      className="flex items-center rounded border border-blueprint-200 overflow-hidden text-[11px]"
+      className="flex items-center rounded border border-blueprint-200 overflow-hidden text-xs"
     >
       {locales.map((l) =>
         l === lang ? (

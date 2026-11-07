@@ -13,7 +13,7 @@ export default function ViewTabs() {
   return (
     <nav
       aria-label={c.ui.tabs.label}
-      className="sticky top-12 md:static z-20 shrink-0 flex items-end justify-between gap-2 px-2 sm:px-4 pt-2 bg-white/95 backdrop-blur border-b border-blueprint-200 font-mono text-[11px] sm:text-xs"
+      className="sticky top-12 md:static z-20 shrink-0 flex items-end justify-between gap-2 px-2 sm:px-4 pt-2 bg-white/95 backdrop-blur border-b border-blueprint-200 font-mono text-xs sm:text-xs"
     >
       <div className="flex min-w-0 gap-1 overflow-x-auto md:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {c.views.map((v) => {
@@ -42,7 +42,7 @@ export default function ViewTabs() {
         })}
       </div>
 
-      <div className="hidden sm:flex items-center gap-1.5 pb-2 text-[10px] text-blueprint-400">
+      <div className="hidden sm:flex items-center gap-1.5 pb-2 text-xs text-blueprint-400">
         {c.views.map((v) => (
           <kbd
             key={v.key}
